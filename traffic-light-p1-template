@@ -1,0 +1,29 @@
+const int redPin = x;
+const int yellowPin = y;
+const int greenPin = z;
+
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+}
+
+void loop() {
+  // Phase 1: Red bulb lights up for t milliseconds, the rest stay closed
+  digitalWrite(redPin, HIGH);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, LOW);
+  delay(t);
+
+  // Phase 2: Yellow bulb lights up for w milliseconds, the rest stay closed
+  digitalWrite(redPin, LOW);
+  digitalWrite(yellowPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  delay(w);
+
+  // Phase 3: Green bulb lights up for r milliseconds, the rest stay closed
+  digitalWrite(redPin, LOW);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  delay(r);
+}
